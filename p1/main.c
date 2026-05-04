@@ -1,8 +1,10 @@
+#include <stdio.h>
+
 int main(void)
 {
-    int N=0;
-    int A=0, B=0, C=0;
-    bool found = false;
+    int N;
+    int A, B, C;
+    int found = 0;
 
     scanf("%d", &N);
 
@@ -13,7 +15,7 @@ int main(void)
                 if (900 * A + 750 * B + 200 * C == N) {
                     if (C < A || C < B) {
                         printf("%d %d %d\n", A, B, C);
-                        found = true;
+                        found = 1;
                     }
                 }
 
@@ -21,10 +23,9 @@ int main(void)
         }
     }
 
-    if (!found) {
+    if (found == 0) {
         printf("none\n");
     }
 
     return 0;
 }
-   
